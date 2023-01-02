@@ -16,7 +16,7 @@ const NewMovies = () => {
   }, []);
   return (
     <div>
-       <div className='flex items-center justify-between'>
+       <div className='flex items-center justify-between px-16'>
         <h3 className='text-[1.1rem] my-2'>New Movies</h3>
         <span className='flex items-center cursor-pointer'>
           <p className='text-lightGray'>See All</p>
@@ -24,10 +24,10 @@ const NewMovies = () => {
         </span>
       </div>
       <div className='flex space-x-4 justify-center my-5'>
-        <NewCard img={movies[0]?.poster_path} title={movies[0]?.title} date={movies[0]?.release_date.split(" ")[0]} rating={movies[0]?.vote_average} />
-        <NewCard img={movies[1]?.poster_path} title={movies[1]?.title} date={movies[1]?.release_date.split(" ")[0]} rating={movies[1]?.vote_average} />
-        <div className='hidden md:block'>
-        <NewCard img={movies[1]?.poster_path} title={movies[1]?.title} date={movies[1]?.release_date.split(" ")[0]} rating={movies[1]?.vote_average} />
+        <NewCard img={movies[0]?.poster_path} title={movies[0]?.title} date={movies[0]?.release_date.split(" ")[0]} rating={movies[0]?.vote_average} id={movies[0]?.id} />
+        <NewCard img={movies[1]?.poster_path} title={movies[1]?.title} date={movies[1]?.release_date.split(" ")[0]} rating={movies[1]?.vote_average} id={movies[1]?.id}/>
+        <div className='hidden lg:block'>
+        <NewCard img={movies[1]?.poster_path} title={movies[1]?.title} date={movies[1]?.release_date.split(" ")[0]} rating={movies[1]?.vote_average} id={movies[1]?.id} />
         </div>
       </div>
     </div>

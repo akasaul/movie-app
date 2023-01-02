@@ -15,7 +15,7 @@ const Trending = () => {
   }, []);
   return (
     <div>
-      <div className='flex items-center justify-between cursor-pointer'>
+      <div className='flex items-center px-16 justify-between cursor-pointer'>
         <h3 className='text-[1.1rem] my-2'>Trending</h3>
         <span className='flex items-center'>
           <p className='text-lightGray'>See All</p>

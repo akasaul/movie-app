@@ -17,7 +17,7 @@ const TopRated = () => {
     }, []);
   return (
     <div>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between px-16'>
             <div className='flex items-center space-x-2'>
                 <h3 className='text-[1.1rem] my-5'>Top Rated</h3>
                 <img className='object-contain h-4 p-0' src="https://upload.wikimedia.org/wikipedia/donate/thumb/4/44/YellowStar.svg/424px-YellowStar.svg.png?20160715211119" alt="" />
@@ -30,7 +30,7 @@ const TopRated = () => {
         <div className='flex space-x-4 justify-center'>
             <TopRatedCard img={movies[0]?.poster_path} rating={movies[0]?.vote_average} date={movies[0]?.release_date} title={movies[0]?.title} />
             <TopRatedCard img={movies[0]?.poster_path} rating={movies[0]?.vote_average} date={movies[0]?.release_date} title={movies[0]?.title} />
-            <div className='hidden md:block'>
+            <div className='hidden lg:block'>
                 <TopRatedCard img={movies[0]?.poster_path} rating={movies[0]?.vote_average} date={movies[0]?.release_date} title={movies[0]?.title} />
             </div>
         </div>
