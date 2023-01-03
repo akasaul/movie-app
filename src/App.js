@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./assets/css/App.css";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
@@ -8,10 +8,27 @@ import store from "./store";
 import { Provider } from "react-redux";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "./features/userSlice";
 
 function App() {
+    const dispatch = useDispatch();
+    const userNew = useSelector((state) => state.user.user);
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if(user) {
+                dispatch(login({
+                    name: user.displayName,
+                    email: user.email
+                  }))
+            } else {
+                dispatch(logout());
+            }
+        })
+    }, []);
     return (
-        <Provider store={store}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" exact element={<Home />}/>
@@ -21,7 +38,6 @@ function App() {
                     <Route path="/signup" exact element={<SignUpPage />} />
                 </Routes>
             </BrowserRouter>
-        </Provider>
     );
 }
 
