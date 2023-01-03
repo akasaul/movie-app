@@ -4,6 +4,7 @@ import Trending from './Trending'
 import NewMovies from './NewMovies'
 import TopRated from './TopRated'
 import {useState, useEffect} from "react";
+import TvSeries from './TvSeries'
 
 const Main = () => {
 
@@ -12,6 +13,7 @@ const Main = () => {
       <Navbar />
       <Trending />
       <NewMovies />
+      <TvSeries />
       <TopRated />
     </div>
   )

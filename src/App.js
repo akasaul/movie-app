@@ -3,15 +3,25 @@ import "./assets/css/App.css";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Details from "./pages/Details"
+import TvDetails from "./pages/TvDetails";
+import store from "./store";
+import { Provider } from "react-redux";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" exact element={<Home />}/>
-                <Route path="/movie/:id" exact element={<Details />} />
-            </Routes>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" exact element={<Home />}/>
+                    <Route path="/movie/:id" exact element={<Details />} />
+                    <Route path="/tv/:id" exact element={<TvDetails />} />
+                    <Route path="/login" exact element={<LoginPage />} />
+                    <Route path="/signup" exact element={<SignUpPage />} />
+                </Routes>
+            </BrowserRouter>
+        </Provider>
     );
 }
 

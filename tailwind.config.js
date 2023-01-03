@@ -10,6 +10,9 @@ module.exports = {
                 red: "#991b1b",
                 gray: "#3f3f46",
                 lightGray: "#737373"
+            },
+            fontFamily: {
+                montserat: 'Montserrat'
             }
         },
     },
